@@ -2,7 +2,7 @@ package gongcheng.zhuyuxi.example.com.recycleviewlianxi;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -24,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
         mRecycleView.setAdapter(recycleView_adapter);
         //添加布局管理器===否则显示不出来数据=====总的
         //一行显示一个
-        //mRecycleView.setLayoutManager(new LinearLayoutManager(this));
+        mRecycleView.setLayoutManager(new LinearLayoutManager(this));
         //一行显示两个或3个或多个
-        mRecycleView.setLayoutManager(new GridLayoutManager(this,4));
+        //mRecycleView.setLayoutManager(new GridLayoutManager(this,4));
         //自己设置
         //mRecycleView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
        //添加LinearLayoutManager分割线的方法
-       // mRecycleView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
+        mRecycleView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
        //添加GridLayoutManager分割线的方法
-        mRecycleView.addItemDecoration(new DividerGridItemDecoration(getApplication()));
+       // mRecycleView.addItemDecoration(new DividerGridItemDecoration(getApplication()));
         OnDatas();
     }
 
